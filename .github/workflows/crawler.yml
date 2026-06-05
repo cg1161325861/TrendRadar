@@ -183,7 +183,7 @@ jobs:
           if [ -z "$ACCESS_TOKEN" ]; then echo "Failed to get token"; exit 1; fi
           RUN_URL="https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
           SCAN_TIME=$(date '+%Y-%m-%d %H:%M:%S' UTC)
-          MSG_TEXT="TrendRadar 扫描完成 ${SCAN_TIME} 详情 ${RUN_URL}"
+          MSG_TEXT="TrendRadar scan done ${SCAN_TIME} ${RUN_URL}"
           curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type=chat_id" \
             -H "Authorization: Bearer ${ACCESS_TOKEN}" \
             -H "Content-Type: application/json" \
